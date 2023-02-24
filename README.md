@@ -19,6 +19,15 @@ Running `kubectlf-flame` does **not** require any modification to existing pods.
 * Kubernetes cluster that use Docker as the container runtime (tested on GKE, EKS and AKS)
 
 ## Usage
+### Installation
+This plugin is forked from the upstream [kubectl-flame](https://github.com/yahoo/kubectl-flame) project so it is not available on Krew. To install the plugin checkout this repo and run:
+
+```
+kubectl krew install --manifest=.krew.yaml
+```
+
+This will clash with any existing installations of kubectl-flame.
+
 ### Profiling Kubernetes Pod
 In order to profile a Java application in pod `mypod` for 1 minute and save the flamegraph as `/tmp/flamegraph.svg` run:
 ```shell
@@ -77,9 +86,6 @@ NodeJS support is based on [perf](https://perf.wiki.kernel.org/index.php/Main_Pa
 
 ## Contribute
 Please refer to [the contributing.md file](Contributing.md) for information about how to get involved. We welcome issues, questions, and pull requests.
-
-## Maintainers
-- Eden Federman: efederman@verizonmedia.com
 
 ## License
 This project is licensed under the terms of the [Apache 2.0](LICENSE-Apache-2.0) open source license. Please refer to [LICENSE](LICENSE) for the full terms.
