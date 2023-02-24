@@ -19,7 +19,6 @@ RUN git clone https://gist.github.com/edeNFed/83a9438156288661e2283c28fee18b8b b
 FROM alpine
 COPY --from=builder /usr/src /usr/src
 RUN apk add bcc-tools perl
-RUN ln -s $(which python3) /usr/bin/python
 RUN mkdir -p /app/FlameGraph
 COPY --from=builder /FlameGraph /app/FlameGraph
 COPY --from=agentbuild /go/bin/agent /app
